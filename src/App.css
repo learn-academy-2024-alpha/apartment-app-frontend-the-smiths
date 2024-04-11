@@ -76,31 +76,25 @@ body {
   border-radius: 1vh;
   background-color: var(--clr-canvas);
   border: none;
-  color: #ffffff;
   text-align: center;
   font-size: 2.5vh;
   padding: 1vh;
-  width: 11.5vw;
+  width: 11vw;
   transition: all 0.5s;
-  cursor: pointer;
-  margin: 1vh;
   height: 6vh;
-}
-
-.get-started-btn span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.get-started-btn span:after {
-  content: "\00bb";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -2vw;
-  transition: 0.5s;
+  span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    right: -2vw;
+    transition: 0.5s;
+  }
 }
 
 .get-started-btn:hover span {
@@ -110,6 +104,14 @@ body {
 .get-started-btn:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+/* footer */
+.footer-text {
+  position: fixed;
+  bottom: 1vh;
+  right: 2vw;
+  color: var(--clr-canvas) !important;
 }
 
 /* *---PAGES---* */
