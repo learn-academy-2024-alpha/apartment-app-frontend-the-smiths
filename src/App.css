@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --clr-canvas: #f9d8af;
   --clr-lighter-pink: #da8799;
@@ -12,7 +11,7 @@
 
 * {
   color: var(--clr-almost-black);
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -125,15 +124,27 @@ body {
   top: 30vh;
   left: 2vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* background-color: var(--clr-almost-black); */
+  border-top: #fff solid 4vh;
+  border-right: #fff solid 2vh;
+  border-bottom: #fff solid 2vh;
 }
 
 .card-left {
   background-color: #fff;
   height: 100%;
   width: 40%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-right {
+.hero-text {
+  top: 30vh;
+  right: 2vw;
+  position: absolute;
+  width: 40vw;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-h2 {
+  font-family: "Bodoni Moda", serif;
+  font-size: 9vh;
 }
