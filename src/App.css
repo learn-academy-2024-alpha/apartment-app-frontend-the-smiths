@@ -37,6 +37,10 @@ body {
   color: inherit;
 }
 
+.fancy-font {
+  font-family: "Bodoni Moda", serif;
+}
+
 /* *---COMPONENTS---* */
 /* header */
 .header-nav {
@@ -50,7 +54,6 @@ body {
 }
 
 .logo-text {
-  font-family: "Bodoni Moda", serif;
   text-decoration: none;
   font-size: 4.5vh;
 }
@@ -71,7 +74,7 @@ body {
   opacity: 50%;
 }
 
-.get-started-btn {
+.slider-btn {
   border-radius: 1vh;
   background-color: var(--clr-canvas);
   border: none;
@@ -96,11 +99,11 @@ body {
   }
 }
 
-.get-started-btn:hover span {
+.slider-btn:hover span {
   padding-right: 2vw;
 }
 
-.get-started-btn:hover span:after {
+.slider-btn:hover span:after {
   opacity: 1;
   right: 0;
 }
@@ -145,6 +148,15 @@ body {
 }
 
 .hero-h2 {
-  font-family: "Bodoni Moda", serif;
   font-size: 9vh;
+}
+
+/* Not Found */
+.not-found-container {
+  flex-direction: column;
+  height: 89vh;
+}
+
+.not-found-404 {
+  font-size: 30vh;
 }
