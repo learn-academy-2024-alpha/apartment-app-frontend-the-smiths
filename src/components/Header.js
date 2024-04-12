@@ -12,7 +12,7 @@ const Header = () => {
             alt="two Vs overlapping in an elegant font"
             className="logo"
           />
-          <span className="logo-text">Vibe Villas</span>
+          <span className="logo-text fancy-font">Vibe Villas</span>
         </NavLink>
       </div>
       <div className="d-flex header-gap">
@@ -28,7 +28,7 @@ const Header = () => {
           Login
         </NavLink>
         <NavLink to="/signin">
-          <button className="get-started-btn">
+          <button className="slider-btn">
             <span>Get Started </span>
           </button>
         </NavLink>

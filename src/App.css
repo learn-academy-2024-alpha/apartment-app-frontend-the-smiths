@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --clr-canvas: #f9d8af;
   --clr-lighter-pink: #da8799;
@@ -12,7 +11,7 @@
 
 * {
   color: var(--clr-almost-black);
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -38,6 +37,10 @@ body {
   color: inherit;
 }
 
+.fancy-font {
+  font-family: "Bodoni Moda", serif;
+}
+
 /* *---COMPONENTS---* */
 /* header */
 .header-nav {
@@ -51,7 +54,6 @@ body {
 }
 
 .logo-text {
-  font-family: "Bodoni Moda", serif;
   text-decoration: none;
   font-size: 4.5vh;
 }
@@ -72,7 +74,7 @@ body {
   opacity: 50%;
 }
 
-.get-started-btn {
+.slider-btn {
   border-radius: 1vh;
   background-color: var(--clr-canvas);
   border: none;
@@ -97,11 +99,11 @@ body {
   }
 }
 
-.get-started-btn:hover span {
+.slider-btn:hover span {
   padding-right: 2vw;
 }
 
-.get-started-btn:hover span:after {
+.slider-btn:hover span:after {
   opacity: 1;
   right: 0;
 }
@@ -115,3 +117,46 @@ body {
 }
 
 /* *---PAGES---* */
+
+/* Home */
+
+.card-container {
+  height: 40vh;
+  width: 50vw;
+  position: absolute;
+  top: 30vh;
+  left: 2vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-top: #fff solid 4vh;
+  border-right: #fff solid 2vh;
+  border-bottom: #fff solid 2vh;
+}
+
+.card-left {
+  background-color: #fff;
+  height: 100%;
+  width: 40%;
+}
+
+.hero-text {
+  top: 30vh;
+  right: 2vw;
+  position: absolute;
+  width: 40vw;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-h2 {
+  font-size: 9vh;
+}
+
+/* Not Found */
+.not-found-container {
+  flex-direction: column;
+  height: 89vh;
+}
+
+.not-found-404 {
+  font-size: 30vh;
+}
