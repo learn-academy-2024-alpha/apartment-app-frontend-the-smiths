@@ -19,6 +19,8 @@ Apartment App serves as a platform for listing apartments available for rent. He
 
 ## Sources
 
-- **Landing Page Inspo**: [SquareSpace](https://www.squarespace.com/website-design/?channel=pnb&subchannel=go&campaign=pnb-go-us-en-core_website_design_tier1-e&subcampaign=(general_beautiful-websites_e)&&cid=13842267263&aid=125919724978&tid=kwd-954794062&mt=e&eid=&loc_p_ms=9028074&loc_i_ms=&nw=g&d=c&adid=532615423575&channel2=pnb&subchannel2=go&gad_source=1&gclid=CjwKCAjw8diwBhAbEiwA7i_sJXIiyLFLVAES7_IjsdpQQL8_M51dkgYdTHNMAWVZYlN4l0hDVL3DGRoC0CkQAvD_BwE&gclsrc=aw.ds)
+- **Landing Page Inspo**: [SquareSpace](<https://www.squarespace.com/website-design/?channel=pnb&subchannel=go&campaign=pnb-go-us-en-core_website_design_tier1-e&subcampaign=(general_beautiful-websites_e)&&cid=13842267263&aid=125919724978&tid=kwd-954794062&mt=e&eid=&loc_p_ms=9028074&loc_i_ms=&nw=g&d=c&adid=532615423575&channel2=pnb&subchannel2=go&gad_source=1&gclid=CjwKCAjw8diwBhAbEiwA7i_sJXIiyLFLVAES7_IjsdpQQL8_M51dkgYdTHNMAWVZYlN4l0hDVL3DGRoC0CkQAvD_BwE&gclsrc=aw.ds>)
 - **Landing Page Image**: [Unsplash](https://unsplash.com)
+- **Logo**: [Unsplash](https://www.canva.com/)
+- **Icons**: [Unsplash](https://fontawesome.com/)
 - **Fonts**: [Montserrat](https://fonts.google.com/specimen/Montserrat) & [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda?query=Bodoni+Moda&noto.query=Bodoni+Moda)
