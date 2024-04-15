@@ -1,8 +1,14 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import logo from "../assets/logo.png"
-
-const Header = () => {
+import { useState } from "react"
+const Header = ({ showSignUpForm }) => {
+  const [formShow, setFormShow] = useState(false)
+  const handleShowForm = () => {
+    setFormShow(true)
+    showSignUpForm(formShow)
+    console.log(formShow)
+  }
   return (
     <nav className="header-nav align-center">
       <div>
@@ -27,8 +33,8 @@ const Header = () => {
         <NavLink to="/signin" className="align-center no-text-dec login-link">
           Login
         </NavLink>
-        <NavLink to="/signin">
-          <button className="slider-btn">
+        <NavLink>
+          <button onClick={handleShowForm} className="slider-btn">
             <span>Get Started </span>
           </button>
         </NavLink>

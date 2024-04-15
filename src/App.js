@@ -14,10 +14,13 @@ const App = () => {
   const [apartments, setApartments] = useState(mockApartments)
   const location = useLocation()
   const isIndexPage = location.pathname === "/apartments"
+  const showSignUpForm = (formShow) => {
+    console.log(formShow)
+  }
 
   return (
     <div className={!isIndexPage ? "tropical-bg" : "muted-bg"}>
-      <Header />
+      <Header showSignUpForm={showSignUpForm} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
