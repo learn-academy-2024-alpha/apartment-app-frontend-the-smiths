@@ -12,7 +12,7 @@ test("renders Home component", () => {
   const homeH2Text = screen.getByText(/Live the Vibe, Love Your Life/)
   expect(homeH2Text).toBeInTheDocument()
   const homeH3Text = screen.getByText(
-    /As the undisputed leader in luxury apartment rentals, we offer an unparalleled experience that redefines elegance and comfort\./s
+    /As the leader of luxury apartment rentals in the Maldives, we offer an unparalleled experience that redefines modern elegance\./s
   )
   expect(homeH3Text).toBeInTheDocument()
   const card = screen.queryByTestId("card-container")
