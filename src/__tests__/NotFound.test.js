@@ -17,6 +17,6 @@ test("renders NotFound component", () => {
   const pageNotFoundText = screen.getByText(/Page Not Found/)
   expect(pageNotFoundText).toBeInTheDocument()
 
-  const homeButton = screen.getByText(/Home/)
+  const homeButton = screen.getByText(/View More Apartments/)
   expect(homeButton).toBeInTheDocument()
 })
