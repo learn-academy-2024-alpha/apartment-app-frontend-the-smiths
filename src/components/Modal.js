@@ -105,15 +105,4 @@ const Modal = ({ selectedApartment, handleClick }) => {
   )
 }
 
-// t.string "street"
-//     t.string "unit"
-//     t.string "city"
-//     t.string "state"
-//     t.integer "square_footage"
-//     t.string "price"
-//     t.integer "bedrooms"
-//     t.float "bathrooms"
-//     t.string "pets"
-//     t.text "image"
-
 export default Modal

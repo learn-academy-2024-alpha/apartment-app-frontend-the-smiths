@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBed } from "@fortawesome/free-solid-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 
-const Index = ({ mockApartments }) => {
+const Index = ({ apartments }) => {
   const [selectedApartment, setSelectedApartment] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -32,12 +32,12 @@ const Index = ({ mockApartments }) => {
           Book Luxury Apartments in the Maldives
         </h2>
         <p className="index-sub-header">
-          {`We selected ${mockApartments.length} apartments worth renting in the Maldives`}
+          {`We selected ${apartments.length} apartments worth renting in the Maldives`}
         </p>
       </div>
       <p className="spotlight-text">Apartment Spotlight</p>
       <div className="cards-cont">
-        {mockApartments.map((apartment, index) => (
+        {apartments.map((apartment, index) => (
           <div className="index-card" key={index}>
             <div className="card-image-container">
               <img className="card-image" src={apartment.image} alt="unit" />

@@ -23,7 +23,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
         <Route
           path="/apartments"
-          element={<Index mockApartments={mockApartments} />}
+          element={<Index apartments={mockApartments} />}
         />
       </Routes>
       <Footer />
