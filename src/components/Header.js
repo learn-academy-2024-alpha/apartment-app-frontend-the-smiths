@@ -1,14 +1,8 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import logo from "../assets/logo.png"
-import { useState } from "react"
-const Header = ({ showSignUpForm }) => {
-  const [formShow, setFormShow] = useState(false)
-  const handleShowForm = () => {
-    setFormShow(true)
-    showSignUpForm(formShow)
-    console.log(formShow)
-  }
+
+const Header = ({ handleShowSignIn, signOut, userSignedIn }) => {
   return (
     <nav className="header-nav align-center">
       <div>
@@ -29,16 +23,22 @@ const Header = ({ showSignUpForm }) => {
           Contact
         </NavLink>
       </div>
-      <div className="d-flex header-gap login-get-started-cont">
-        <NavLink to="/signin" className="align-center no-text-dec login-link">
-          Login
-        </NavLink>
-        <NavLink>
-          <button onClick={handleShowForm} className="slider-btn">
-            <span>Get Started </span>
+      {!userSignedIn && (
+        <div className="d-flex header-gap login-get-started-cont">
+          <NavLink to="/">
+            <button onClick={handleShowSignIn} className="slider-btn">
+              <span>Get Started </span>
+            </button>
+          </NavLink>
+        </div>
+      )}
+      {userSignedIn && (
+        <NavLink to="/">
+          <button onClick={signOut} className="slider-btn">
+            <span>Log Out </span>
           </button>
         </NavLink>
-      </div>
+      )}
     </nav>
   )
 }

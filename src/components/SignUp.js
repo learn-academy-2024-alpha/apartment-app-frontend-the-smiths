@@ -1,11 +1,8 @@
 import React from "react"
-import { Col, Form, FormGroup, Label, Row } from "reactstrap"
+import { Form, FormGroup, Label } from "reactstrap"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
-import mockUsers from "../mockUsers.js"
 
-const SignUp = ({ signUp }) => {
-  const navigate = useNavigate()
+const SignUp = ({ signUp, handleShowSignIn }) => {
   const {
     register,
     handleSubmit,
@@ -14,53 +11,48 @@ const SignUp = ({ signUp }) => {
 
   const onSubmit = (newUser) => {
     signUp({ user: newUser })
-    // navigate("/")
   }
 
   return (
-    <div>
-      SignUp
+    <div className="sign-in-up-form-cont">
+      <h2
+        className="fancy-font"
+        style={{ fontSize: "3vh", textAlign: "center" }}
+      >
+        Sign Up
+      </h2>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Row>
-          <Col>
-            <FormGroup>
-              <Label for="email">Email</Label>
-              <input
-                id="email"
-                name="email"
-                placeholder="email"
-                type="text"
-                className="form-control"
-                {...register("email", { required: true })}
-              />
-              {errors.email && (
-                <span className="form-validations">Email is required</span>
-              )}
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="password">Password</Label>
-              <input
-                id="password"
-                name="password"
-                placeholder="password"
-                type="password"
-                className="form-control"
-                {...register("password", { required: true })}
-              />
-              {errors.password && (
-                <span className="form-validations">Password is required</span>
-              )}
-            </FormGroup>
-          </Col>
-        </Row>
+        <FormGroup>
+          <Label for="emailSignUp">Email</Label>
+          <input
+            id="emailSignUp"
+            name="email"
+            type="text"
+            className="form-control"
+            {...register("email", { required: true })}
+          />
+          {errors.email && (
+            <span className="form-validations">Email is required</span>
+          )}
+        </FormGroup>
+        <FormGroup>
+          <Label for="passwordSignUp">Password</Label>
+          <input
+            id="passwordSignUp"
+            name="password"
+            type="password"
+            className="form-control"
+            {...register("password", { required: true })}
+          />
+          {errors.password && (
+            <span className="form-validations">Password is required</span>
+          )}
+        </FormGroup>
         <FormGroup>
           <Label for="password_confirmation">Password Confirmation</Label>
           <input
             id="password_confirmation"
             name="password_confirmation"
-            placeholder="password_confirmation"
             type="password"
             className="form-control"
             {...register("password_confirmation", { required: true })}
@@ -69,15 +61,18 @@ const SignUp = ({ signUp }) => {
             <span className="form-validations">Password is required</span>
           )}
         </FormGroup>
-        <div className="centering-content">
-          <button
-            onClick={handleSubmit}
-            className="nav-button gochi-hand-regular"
-          >
-            Submit
+        <div className="justify-center">
+          <button className="form-submit-btn" onClick={handleSubmit}>
+            Sign Up
           </button>
         </div>
       </Form>
+      <hr />
+      <div className="justify-center">
+        <button className="other-form-option-btn" onClick={handleShowSignIn}>
+          Sign In
+        </button>
+      </div>
     </div>
   )
 }
