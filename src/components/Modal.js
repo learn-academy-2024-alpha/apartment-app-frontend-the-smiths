@@ -59,21 +59,38 @@ const Modal = ({ selectedApartment, handleClick }) => {
               <div style={{ fontSize: "3vh", fontWeight: "600" }}>
                 Popular Amenities
               </div>
-              imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+              <ul>
+                <li>Keyless Entry</li>
+                <li>Concierge</li>
+                <li>Personal Chef</li>
+                <li>Onsite Daycare</li>
+              </ul>
               {showMore ? (
                 <span>
-                  erisque enim ligula venenatis dolor. Maecenas nisl est,
-                  ultrices nec congue eget, auctor vitae massa. Fusce luctus
-                  vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                  ullamcorper ipsum dignissim ac. In at libero sed nunc
-                  venenatis imperdiet sed ornare turpis. Donec vitae dui eget
-                  tellus gravida venenatis. Integer fringilla congue eros non
-                  fermentum. Sed dapibus pulvinar nibh tempor porta. erisque
-                  enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
-                  congue eget, auctor vitae massa. Fusce luctus vestibulum augue
-                  ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum
-                  dignissim ac. In at libero sed nunc venenatis imperdiet sed
-                  ornare turpis
+                  <h3>INTERNET</h3>
+                  <ul>
+                    <li>Fiber Optic Wifi</li>
+                    <li>Smart Thermostat</li>
+                    <li>Smart Security System</li>
+                  </ul>
+                  <h3>HOME</h3>
+                  <ul>
+                    <li>Maid Service</li>
+                    <li>Spa</li>
+                  </ul>
+                  <h3>KITCHEN</h3>
+                  <ul>
+                    <li>Full Kitchen</li>
+                    <li>Pizza Oven</li>
+                    <li>Hibachi Grill</li>
+                  </ul>
+                  <h3>OUTDOORS</h3>
+                  <ul>
+                    <li>Rooftop Pool</li>
+                    <li>Ocean View</li>
+                    <li>Golf Course</li>
+                    <li>Community Garden</li>
+                  </ul>
                 </span>
               ) : (
                 <span id="dots">...</span>

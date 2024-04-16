@@ -32,13 +32,24 @@ const Header = ({ handleShowSignIn, signOut, userSignedIn }) => {
           </NavLink>
         </div>
       )}
-      {userSignedIn && (
-        <NavLink to="/">
-          <button onClick={signOut} className="slider-btn">
-            <span>Log Out </span>
-          </button>
-        </NavLink>
-      )}
+      <div>
+        {userSignedIn && (
+          <NavLink
+            style={{ marginRight: "2vw" }}
+            to="/my-apartments"
+            className="no-text-dec apartment-link "
+          >
+            My Apartments
+          </NavLink>
+        )}
+        {userSignedIn && (
+          <NavLink to="/">
+            <button onClick={signOut} className="slider-btn">
+              <span>Log Out </span>
+            </button>
+          </NavLink>
+        )}
+      </div>
     </nav>
   )
 }

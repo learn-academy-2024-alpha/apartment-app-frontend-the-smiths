@@ -13,9 +13,6 @@ const Home = ({
   userSignedIn,
   checkLoggedInStatus,
 }) => {
-  console.log(showSignInForm)
-  console.log(showSignUpForm)
-  console.log(checkLoggedInStatus)
   return (
     <div className="home-cont">
       <div className="hero-text justify-center">

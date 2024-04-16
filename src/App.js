@@ -7,6 +7,7 @@ import Footer from "./components/Footer.js"
 import Home from "./pages/Home.js"
 import NotFound from "./pages/NotFound.js"
 import Index from "./pages/Index.js"
+import MyApartments from "./pages/MyApartments.js"
 
 const App = () => {
   const [apartments, setApartments] = useState(mockApartments)
@@ -17,6 +18,7 @@ const App = () => {
   const [checkLoggedInStatus, setCheckLoggedInStatus] = useState(null)
   const location = useLocation()
   const isIndexPage = location.pathname === "/apartments"
+  const isMyApartmentsPage = location.pathname === "/my-apartments"
 
   useEffect(() => {
     const userValue = localStorage.getItem("user")
@@ -129,6 +131,12 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
         <Route path="/apartments" element={<Index apartments={apartments} />} />
+        {user && (
+          <Route
+            path="/my-apartments"
+            element={<MyApartments apartments={apartments} user={user} />}
+          />
+        )}
       </Routes>
       <Footer />
     </div>
