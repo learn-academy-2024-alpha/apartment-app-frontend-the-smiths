@@ -19,16 +19,7 @@ const App = () => {
   const isIndexPage = location.pathname === "/apartments"
 
   useEffect(() => {
-    const searchLocalStorageForUser = (key) => {
-      for (let i = 0; i < localStorage.length; i++) {
-        const localStorageKey = localStorage.key(i)
-        if (localStorageKey === key) {
-          return localStorage.getItem(key)
-        }
-      }
-      return null
-    }
-    const userValue = searchLocalStorageForUser("user")
+    const userValue = localStorage.getItem("user")
     if (userValue) {
       setUserSignedIn(true)
     }
