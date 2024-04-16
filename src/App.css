@@ -5,6 +5,7 @@
   --clr-canvas: #f9d8af;
   --clr-lighter-pink: #da8799;
   --clr-darker-pink: #c7788e;
+  --clr-submit-btn: #f0b39a;
   --clr-dull-orange: #e7b47f;
   --clr-almost-black: #241e14;
   --clr-white: #fff;
@@ -318,4 +319,38 @@
   &:hover {
     opacity: 50%;
   }
+}
+
+/* sign in */
+.sign-in-up-form-cont {
+  padding: 0 2vw;
+}
+
+.form-submit-btn {
+  border: none;
+  border-radius: 1vh;
+  height: 4vh;
+  width: 6vw;
+  background-color: var(--clr-submit-btn);
+}
+
+.other-form-option-btn {
+  border: none;
+  border-radius: 1vh;
+  height: 4vh;
+  width: 12vw;
+  background-color: var(--clr-lighter-pink);
+}
+
+/* sign up */
+
+.permium-services {
+  text-decoration: none;
+  font-size: 2.5vh;
+  margin-top: 3vh;
+}
+
+.get-started-2 {
+  background-color: var(--clr-submit-btn) !important;
+  margin-top: 3vh;
 }

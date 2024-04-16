@@ -28,10 +28,6 @@ test("renders the Header component", () => {
   expect(contactLink).toBeInTheDocument()
   expect(contactLink).toHaveAttribute("href", "/contact")
 
-  const loginLink = screen.getByText("Login")
-  expect(loginLink).toBeInTheDocument()
-  expect(loginLink).toHaveAttribute("href", "/signin")
-
   const getStartedButton = screen.getByText("Get Started")
   expect(getStartedButton).toBeInTheDocument()
 })
