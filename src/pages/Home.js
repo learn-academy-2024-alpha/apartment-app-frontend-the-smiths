@@ -11,7 +11,6 @@ const Home = ({
   signUp,
   signIn,
   userSignedIn,
-  checkLoggedInStatus,
 }) => {
   return (
     <div className="home-cont">
@@ -23,8 +22,12 @@ const Home = ({
         </h3>
       </div>
       <div className="card-container d-flex" data-testid="card-container">
-        <div className="card-left align-center justify-center">
-          {!showSignInForm && !showSignUpForm && !checkLoggedInStatus && (
+        <div
+          className={`card-left ${
+            userSignedIn ? "justify-center align-center" : ""
+          }`}
+        >
+          {!showSignInForm && !showSignUpForm && !userSignedIn && (
             <div
               className="justify-center align-center"
               style={{ flexDirection: "column" }}
@@ -33,7 +36,7 @@ const Home = ({
                 className="fancy-font"
                 style={{ fontSize: "5.5vh", textAlign: "center" }}
               >
-                Luxury in the Maldives
+                Apartment Rentals in the Maldives
               </h2>
               <div
                 className="permium-services"
@@ -41,9 +44,21 @@ const Home = ({
                   textAlign: "center",
                 }}
               >
-                <p>Maid Services</p>
-                <p>Personal Chefs</p>
-                <p>Fiber Optic Wifi</p>
+                <h3
+                  style={{
+                    fontSize: "2vh",
+                    fontWeight: "600",
+                  }}
+                >
+                  Luxury Amenities
+                </h3>
+                <p className="home-services">Maid Services</p>
+                <p className="home-services" style={{ marginTop: "-0.5vh" }}>
+                  Personal Chefs
+                </p>
+                <p className="home-services" style={{ marginTop: "-0.5vh" }}>
+                  Fiber Optic Internet
+                </p>
               </div>
               <button
                 onClick={handleShowSignIn}
@@ -72,7 +87,7 @@ const Home = ({
               </NavLink>
             </div>
           )}
-          {showSignInForm && !userSignedIn && !checkLoggedInStatus && (
+          {showSignInForm && !userSignedIn && !userSignedIn && (
             <SignIn signIn={signIn} handleCreateAccount={handleCreateAccount} />
           )}
           {showSignUpForm && !userSignedIn && (

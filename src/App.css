@@ -9,7 +9,8 @@
   --clr-dull-orange: #e7b47f;
   --clr-almost-black: #241e14;
   --clr-white: #fff;
-  --clr-muted-bg: #fbe0b7;
+  --clr-muted-bg: #eccba3;
+  --clr-red: #b30000;
   --font-standard: 2.25vh;
   --font-modal: 2vh;
   --header-gap: 2vw;
@@ -46,6 +47,14 @@
 .justify-center {
   display: flex;
   justify-content: center;
+}
+
+.opacity-transition {
+  transition: opacity 0.3s ease;
+}
+
+.opacity-hover:hover {
+  opacity: 50%;
 }
 
 .slider-btn {
@@ -91,6 +100,10 @@
   font-family: "Bodoni Moda", serif;
 }
 
+.reg-font {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 /* *---COMPONENTS---* */
 /* header */
 .header-nav {
@@ -112,18 +125,6 @@
   gap: var(--header-gap);
 }
 
-.contact-link,
-.apartment-link,
-.login-link {
-  transition: opacity 0.3s ease;
-}
-
-.contact-link:hover,
-.apartment-link:hover,
-.login-link:hover {
-  opacity: 50%;
-}
-
 /* footer */
 .footer-text {
   position: fixed;
@@ -137,15 +138,15 @@
 /* Home */
 .home-cont {
   position: absolute;
-  top: 23vh;
+  top: 21vh;
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
 
 .card-container {
-  height: 55vh;
-  width: 50vw;
+  height: 60vh;
+  width: 55vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-top: var(--clr-white) solid 8vh;
   border-right: var(--clr-white) solid 2vh;
@@ -156,6 +157,7 @@
   background-color: var(--clr-white);
   height: 100%;
   width: 45%;
+  padding: 0 2vw;
 }
 .hero-text {
   width: 40vw;
@@ -217,6 +219,7 @@
   width: 28vw;
   height: 28vh;
   overflow-y: hidden;
+  position: relative;
 }
 
 .index-h2 {
@@ -260,6 +263,7 @@
   max-width: 80vw;
   font-size: var(--font-modal);
   border-top: var(--clr-white) 9vh solid;
+  z-index: 2;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -322,9 +326,6 @@
 }
 
 /* sign in */
-.sign-in-up-form-cont {
-  padding: 0 2vw;
-}
 
 .form-submit-btn {
   border: none;
@@ -342,6 +343,12 @@
   background-color: var(--clr-lighter-pink);
 }
 
+.error-form-text {
+  color: var(--clr-red);
+  font-size: 1.5vh;
+  font-weight: 600;
+}
+
 /* sign up */
 
 .permium-services {
@@ -353,4 +360,33 @@
 .get-started-2 {
   background-color: var(--clr-submit-btn) !important;
   margin-top: 3vh;
+  width: 8vw;
+}
+
+.home-services {
+  font-size: 1.75vh;
+}
+
+.category {
+  font-size: 3vh;
+  font-weight: 600;
+  margin-bottom: 2vh;
+}
+
+/* my apartments */
+
+.edit-icon {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  cursor: pointer;
+  height: 2.75vh;
+}
+
+.trash-icon {
+  position: absolute;
+  top: 1vh;
+  left: 3.5vw;
+  cursor: pointer;
+  height: 2.75vh;
 }

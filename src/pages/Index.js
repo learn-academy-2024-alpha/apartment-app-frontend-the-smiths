@@ -19,6 +19,7 @@ const Index = ({ apartments }) => {
       document.body.classList.remove("modal-open")
     }
   }
+  console.log(apartments)
 
   return (
     <div className="index-cont">
@@ -42,16 +43,34 @@ const Index = ({ apartments }) => {
             <div className="card-image-container">
               <img className="card-image" src={apartment.image} alt="unit" />
             </div>
-            <p
-              style={{
-                fontSize: "3.5vh",
-                fontWeight: "600",
-                marginTop: "2vh",
-              }}
-              className="fancy-font"
-            >
-              Name
-            </p>
+            <div className="d-flex" style={{ justifyContent: "space-between" }}>
+              <p
+                style={{
+                  fontSize: "3.5vh",
+                  fontWeight: "600",
+                  marginTop: "2vh",
+                }}
+                className="fancy-font"
+              >
+                {apartment.name}
+              </p>
+              <p
+                className="fancy-font"
+                style={{
+                  fontSize: "3.5vh",
+                  fontWeight: "600",
+                  marginTop: "2vh",
+                }}
+              >
+                ${apartment.price}
+                <span
+                  className="reg-font"
+                  style={{ fontSize: "2vh", fontWeight: 400 }}
+                >
+                  /night
+                </span>
+              </p>
+            </div>
             <p
               style={{
                 marginTop: "-1.5vh",

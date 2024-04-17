@@ -25,7 +25,8 @@ const App = () => {
     if (userValue) {
       setUserSignedIn(true)
     }
-    setCheckLoggedInStatus(userValue)
+    setCheckLoggedInStatus(JSON.parse(userValue))
+    setUser(JSON.parse(userValue))
   }, [])
 
   const signIn = async (user) => {
@@ -106,12 +107,20 @@ const App = () => {
     setShowSignUpForm(true)
   }
 
+  const logOut = () => {
+    signOut()
+    setShowSignInForm(false)
+    setShowSignUpForm(false)
+  }
+
   return (
-    <div className={!isIndexPage ? "tropical-bg" : "muted-bg"}>
+    <div
+      className={isIndexPage || isMyApartmentsPage ? "muted-bg" : "tropical-bg"}
+    >
       <Header
         userSignedIn={userSignedIn}
         handleShowSignIn={handleShowSignIn}
-        signOut={signOut}
+        logOut={logOut}
       />
       <Routes>
         <Route
@@ -131,7 +140,7 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
         <Route path="/apartments" element={<Index apartments={apartments} />} />
-        {user && (
+        {userSignedIn && (
           <Route
             path="/my-apartments"
             element={<MyApartments apartments={apartments} user={user} />}

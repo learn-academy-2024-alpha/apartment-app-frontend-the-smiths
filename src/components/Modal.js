@@ -7,6 +7,10 @@ import { faRulerCombined } from "@fortawesome/free-solid-svg-icons"
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
+import { faWifi } from "@fortawesome/free-solid-svg-icons"
+import { faBellConcierge } from "@fortawesome/free-solid-svg-icons"
+import { faUtensils } from "@fortawesome/free-solid-svg-icons"
+import { faBaby } from "@fortawesome/free-solid-svg-icons"
 
 const Modal = ({ selectedApartment, handleClick }) => {
   const [showMore, setShowMore] = useState(false)
@@ -30,7 +34,7 @@ const Modal = ({ selectedApartment, handleClick }) => {
             style={{ fontSize: "6vh", fontWeight: "600" }}
             className="fancy-font"
           >
-            Name
+            {selectedApartment.name}
           </h2>
           <div style={{ marginTop: "-1vh" }}>
             {selectedApartment.city}, {selectedApartment.state}
@@ -56,55 +60,83 @@ const Modal = ({ selectedApartment, handleClick }) => {
               </span>
             </div>
             <div style={{ marginTop: "6vh" }}>
-              <div style={{ fontSize: "3vh", fontWeight: "600" }}>
-                Popular Amenities
+              <div className="category">Popular Amenities</div>
+              <div className="modal-text-row d-flex">
+                {selectedApartment.fiber_optic && (
+                  <p className="modal-icon-text">
+                    <FontAwesomeIcon icon={faWifi} /> Fiber Optic Internet
+                  </p>
+                )}
+                {selectedApartment.concierge && (
+                  <p className="modal-icon-text">
+                    <FontAwesomeIcon icon={faBellConcierge} /> Concierge
+                  </p>
+                )}
               </div>
-              <ul>
-                <li>Keyless Entry</li>
-                <li>Concierge</li>
-                <li>Personal Chef</li>
-                <li>Onsite Daycare</li>
-              </ul>
+              <div className="modal-text-row d-flex">
+                {selectedApartment.personal_chef && (
+                  <span className="modal-icon-text">
+                    <FontAwesomeIcon icon={faUtensils} /> Personal Chef
+                  </span>
+                )}
+                {selectedApartment.onsite_daycare && (
+                  <span className="modal-icon-text">
+                    <FontAwesomeIcon icon={faBaby} /> Onsite Daycare
+                  </span>
+                )}
+              </div>
               {showMore ? (
                 <span>
-                  <h3>INTERNET</h3>
+                  <h3 className="category" style={{ marginTop: "2vh" }}>
+                    Internet
+                  </h3>
                   <ul>
-                    <li>Fiber Optic Wifi</li>
-                    <li>Smart Thermostat</li>
-                    <li>Smart Security System</li>
+                    {selectedApartment.keyless_entry && <li>Keyless Entry</li>}
+                    {selectedApartment.smart_thermostat && (
+                      <li>Smart Thermostat</li>
+                    )}
+                    {selectedApartment.smart_security_system && (
+                      <li>Smart Security System</li>
+                    )}
                   </ul>
-                  <h3>HOME</h3>
+                  <h3 className="category">Home</h3>
                   <ul>
-                    <li>Maid Service</li>
-                    <li>Spa</li>
+                    {selectedApartment.maid_service && <li>Maid Service</li>}
+                    {selectedApartment.spa && <li>Spa</li>}
                   </ul>
-                  <h3>KITCHEN</h3>
+                  <h3 className="category">Kitchen</h3>
                   <ul>
-                    <li>Full Kitchen</li>
-                    <li>Pizza Oven</li>
-                    <li>Hibachi Grill</li>
+                    {selectedApartment.full_kitchen && <li>Full Kitchen</li>}
+                    {selectedApartment.pizza_ovens && <li>Pizza Oven</li>}
+                    {selectedApartment.hibachi_grill && <li>Hibachi Grill</li>}
                   </ul>
-                  <h3>OUTDOORS</h3>
+                  <h3 className="category">Outdoors</h3>
                   <ul>
-                    <li>Rooftop Pool</li>
-                    <li>Ocean View</li>
-                    <li>Golf Course</li>
-                    <li>Community Garden</li>
+                    {selectedApartment.rooftop_pool && <li>Rooftop Pool</li>}
+                    {selectedApartment.ocean_view && <li>Ocean View</li>}
+                    {selectedApartment.golf_course && <li>Golf Course</li>}
+                    {selectedApartment.community_garden && (
+                      <li>Community Garden</li>
+                    )}
+                  </ul>
+                  <h3 className="category">Pets</h3>
+                  <ul>
+                    <li>{selectedApartment.pets}</li>
                   </ul>
                 </span>
               ) : (
-                <span id="dots">...</span>
+                <span id="dots"></span>
               )}
             </div>
             <p onClick={toggleShowMore} className="subtle-btn">
               {showMore ? (
-                <>
+                <p style={{ marginTop: "2vh" }}>
                   <FontAwesomeIcon icon={faChevronLeft} /> Read less
-                </>
+                </p>
               ) : (
-                <>
+                <p style={{ marginTop: "2vh" }}>
                   Read more <FontAwesomeIcon icon={faChevronRight} />
-                </>
+                </p>
               )}
             </p>
           </div>
