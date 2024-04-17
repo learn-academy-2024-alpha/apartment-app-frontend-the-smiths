@@ -16,6 +16,7 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [userSignedIn, setUserSignedIn] = useState(false)
   const [checkLoggedInStatus, setCheckLoggedInStatus] = useState(null)
+  const [showNewForm, setShowNewForm] = useState(false)
   const location = useLocation()
   const isIndexPage = location.pathname === "/apartments"
   const isMyApartmentsPage = location.pathname === "/my-apartments"
@@ -113,6 +114,13 @@ const App = () => {
     setShowSignUpForm(false)
   }
 
+  const handleCreateListing = () => {
+    console.log(showNewForm)
+    setShowNewForm(true)
+  }
+  const createApartment = async (apartment) => {
+    console.log(apartment)
+  }
   return (
     <div
       className={isIndexPage || isMyApartmentsPage ? "muted-bg" : "tropical-bg"}
@@ -143,7 +151,15 @@ const App = () => {
         {userSignedIn && (
           <Route
             path="/my-apartments"
-            element={<MyApartments apartments={apartments} user={user} />}
+            element={
+              <MyApartments
+                handleCreateListing={handleCreateListing}
+                showNewForm={showNewForm}
+                apartments={apartments}
+                user={user}
+                createApartment={createApartment}
+              />
+            }
           />
         )}
       </Routes>

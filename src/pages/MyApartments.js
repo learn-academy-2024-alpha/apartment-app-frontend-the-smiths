@@ -6,8 +6,17 @@ import { faBed } from "@fortawesome/free-solid-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
+import ApartmentNew from "../components/ApartmentNew.js"
+import ModalNewForm from "../components/ModalNewForm.js"
+import ApartmentEdit from "../components/ApartmentEdit.js"
 
-const MyApartments = ({ apartments, user }) => {
+const MyApartments = ({
+  apartments,
+  user,
+  handleCreateListing,
+  showNewForm,
+  createApartment,
+}) => {
   const [selectedApartment, setSelectedApartment] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -21,10 +30,23 @@ const MyApartments = ({ apartments, user }) => {
       document.body.classList.remove("modal-open")
     }
   }
+  const handleShowNewFormModal = () => {
+    handleCreateListing()
+    if (!showNewForm) {
+      document.body.classList.add("modal-open")
+    } else {
+      document.body.classList.remove("modal-open")
+    }
+  }
   const myApartments = apartments.filter((apt) => apt.user_id === user.id)
-  console.log(myApartments)
+  console.log(showNewForm)
   return (
     <>
+      <ApartmentEdit />
+      <ApartmentNew createApartment={createApartment} />
+      {showNewForm && (
+        <ModalNewForm handleShowNewFormModal={handleShowNewFormModal} />
+      )}
       <div className="index-cont">
         <div className="index-top-text justify-center align-center">
           <img
@@ -36,6 +58,12 @@ const MyApartments = ({ apartments, user }) => {
             My Apartments
           </h2>
         </div>
+        <button
+          className="other-form-option-btn"
+          onClick={() => handleShowNewFormModal}
+        >
+          Create Your Listing
+        </button>
         <div className="cards-cont">
           {myApartments.map((apartment, index) => (
             <div className="index-card" key={index}>

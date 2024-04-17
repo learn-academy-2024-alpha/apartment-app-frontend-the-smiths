@@ -223,58 +223,132 @@ const ApartmentNew = ({ createApartment, user }) => {
         <Col md={6}>
           <FormGroup>
             <Label for="smart_security_system">Smart Security System</Label>
-            <select
-              id="smart_security_system"
-              name="smart_security_system"
-              className="form-control"
-              {...register("smart_security_system")}
-            >
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+            <div>
+              <input
+                type="radio"
+                name="smart_security_system"
+                value="true"
+                id="smart_security_system_yes"
+                className="form-check-input"
+                {...register("smart_security_system")}
+              />
+              <Label
+                for="smart_security_system_yes"
+                className="form-check-label"
+              >
+                Yes
+              </Label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="smart_security_system"
+                value="false"
+                id="smart_security_system_no"
+                className="form-check-input"
+                {...register("smart_security_system")}
+              />
+              <Label
+                for="smart_security_system_no"
+                className="form-check-label"
+              >
+                No
+              </Label>
+            </div>
           </FormGroup>
         </Col>
         <Col md={6}>
           <FormGroup>
             <Label for="rooftop_pool">Rooftop Pool</Label>
-            <select
-              id="rooftop_pool"
-              name="rooftop_pool"
-              className="form-control"
-              {...register("rooftop_pool")}
-            >
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+            <div>
+              <input
+                type="radio"
+                name="rooftop_pool"
+                value="true"
+                id="rooftop_pool_yes"
+                className="form-check-input"
+                {...register("rooftop_pool")}
+              />
+              <Label for="rooftop_pool_yes" className="form-check-label">
+                Yes
+              </Label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="rooftop_pool"
+                value="false"
+                id="rooftop_pool_no"
+                className="form-check-input"
+                {...register("rooftop_pool")}
+              />
+              <Label for="rooftop_pool_no" className="form-check-label">
+                No
+              </Label>
+            </div>
           </FormGroup>
         </Col>
         <Row>
           <Col md={6}>
             <FormGroup>
               <Label for="golf_course">Golf Course</Label>
-              <select
-                id="golf_course"
-                name="golf_course"
-                className="form-control"
-                {...register("golf_course")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="golf_course"
+                  value="true"
+                  id="golf_course_yes"
+                  className="form-check-input"
+                  {...register("golf_course")}
+                />
+                <Label for="golf_course_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="golf_course"
+                  value="false"
+                  id="golf_course_no"
+                  className="form-check-input"
+                  {...register("golf_course")}
+                />
+                <Label for="golf_course_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="community_garden">Community Garden</Label>
-              <select
-                id="community_garden"
-                name="community_garden"
-                className="form-control"
-                {...register("community_garden")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="community_garden"
+                  value="true"
+                  id="community_garden_yes"
+                  className="form-check-input"
+                  {...register("community_garden")}
+                />
+                <Label for="community_garden_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="community_garden"
+                  value="false"
+                  id="community_garden_no"
+                  className="form-check-input"
+                  {...register("community_garden")}
+                />
+                <Label for="community_garden_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
         </Row>
@@ -282,29 +356,63 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Col md={6}>
             <FormGroup>
               <Label for="spa">Spa</Label>
-              <select
-                id="spa"
-                name="spa"
-                className="form-control"
-                {...register("spa")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="spa"
+                  value="true"
+                  id="spa_yes"
+                  className="form-check-input"
+                  {...register("spa")}
+                />
+                <Label for="spa_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="spa"
+                  value="false"
+                  id="spa_no"
+                  className="form-check-input"
+                  {...register("spa")}
+                />
+                <Label for="spa_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="concierge">Concierge</Label>
-              <select
-                id="concierge"
-                name="concierge"
-                className="form-control"
-                {...register("concierge")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="concierge"
+                  value="true"
+                  id="concierge_yes"
+                  className="form-check-input"
+                  {...register("concierge")}
+                />
+                <Label for="concierge_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="concierge"
+                  value="false"
+                  id="concierge_no"
+                  className="form-check-input"
+                  {...register("concierge")}
+                />
+                <Label for="concierge_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
         </Row>
@@ -312,29 +420,63 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Col md={6}>
             <FormGroup>
               <Label for="onsite_daycare">Onsite Daycare</Label>
-              <select
-                id="onsite_daycare"
-                name="onsite_daycare"
-                className="form-control"
-                {...register("onsite_daycare")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="onsite_daycare"
+                  value="true"
+                  id="onsite_daycare_yes"
+                  className="form-check-input"
+                  {...register("onsite_daycare")}
+                />
+                <Label for="onsite_daycare_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="onsite_daycare"
+                  value="false"
+                  id="onsite_daycare_no"
+                  className="form-check-input"
+                  {...register("onsite_daycare")}
+                />
+                <Label for="onsite_daycare_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="pizza_ovens">Pizza Ovens</Label>
-              <select
-                id="pizza_ovens"
-                name="pizza_ovens"
-                className="form-control"
-                {...register("pizza_ovens")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="pizza_ovens"
+                  value="true"
+                  id="pizza_ovens_yes"
+                  className="form-check-input"
+                  {...register("pizza_ovens")}
+                />
+                <Label for="pizza_ovens_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="pizza_ovens"
+                  value="false"
+                  id="pizza_ovens_no"
+                  className="form-check-input"
+                  {...register("pizza_ovens")}
+                />
+                <Label for="pizza_ovens_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
         </Row>
@@ -342,29 +484,63 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Col md={6}>
             <FormGroup>
               <Label for="hibachi_grill">Hibachi Grill</Label>
-              <select
-                id="hibachi_grill"
-                name="hibachi_grill"
-                className="form-control"
-                {...register("hibachi_grill")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="hibachi_grill"
+                  value="true"
+                  id="hibachi_grill_yes"
+                  className="form-check-input"
+                  {...register("hibachi_grill")}
+                />
+                <Label for="hibachi_grill_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="hibachi_grill"
+                  value="false"
+                  id="hibachi_grill_no"
+                  className="form-check-input"
+                  {...register("hibachi_grill")}
+                />
+                <Label for="hibachi_grill_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="full_kitchen">Full Kitchen</Label>
-              <select
-                id="full_kitchen"
-                name="full_kitchen"
-                className="form-control"
-                {...register("full_kitchen")}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <div>
+                <input
+                  type="radio"
+                  name="full_kitchen"
+                  value="true"
+                  id="full_kitchen_yes"
+                  className="form-check-input"
+                  {...register("full_kitchen")}
+                />
+                <Label for="full_kitchen_yes" className="form-check-label">
+                  Yes
+                </Label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="full_kitchen"
+                  value="false"
+                  id="full_kitchen_no"
+                  className="form-check-input"
+                  {...register("full_kitchen")}
+                />
+                <Label for="full_kitchen_no" className="form-check-label">
+                  No
+                </Label>
+              </div>
             </FormGroup>
           </Col>
         </Row>
