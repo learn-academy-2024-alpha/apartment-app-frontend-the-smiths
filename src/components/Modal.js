@@ -7,6 +7,10 @@ import { faRulerCombined } from "@fortawesome/free-solid-svg-icons"
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
+import { faWifi } from "@fortawesome/free-solid-svg-icons"
+import { faBellConcierge } from "@fortawesome/free-solid-svg-icons"
+import { faUtensils } from "@fortawesome/free-solid-svg-icons"
+import { faBaby } from "@fortawesome/free-solid-svg-icons"
 
 const Modal = ({ selectedApartment, handleClick }) => {
   const [showMore, setShowMore] = useState(false)
@@ -30,7 +34,7 @@ const Modal = ({ selectedApartment, handleClick }) => {
             style={{ fontSize: "6vh", fontWeight: "600" }}
             className="fancy-font"
           >
-            Name
+            {selectedApartment.name}
           </h2>
           <div style={{ marginTop: "-1vh" }}>
             {selectedApartment.city}, {selectedApartment.state}
@@ -56,38 +60,83 @@ const Modal = ({ selectedApartment, handleClick }) => {
               </span>
             </div>
             <div style={{ marginTop: "6vh" }}>
-              <div style={{ fontSize: "3vh", fontWeight: "600" }}>
-                Popular Amenities
+              <div className="category">Popular Amenities</div>
+              <div className="modal-text-row d-flex">
+                {selectedApartment.fiber_optic && (
+                  <p className="modal-icon-text">
+                    <FontAwesomeIcon icon={faWifi} /> Fiber Optic Internet
+                  </p>
+                )}
+                {selectedApartment.concierge && (
+                  <p className="modal-icon-text">
+                    <FontAwesomeIcon icon={faBellConcierge} /> Concierge
+                  </p>
+                )}
               </div>
-              imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+              <div className="modal-text-row d-flex">
+                {selectedApartment.personal_chef && (
+                  <span className="modal-icon-text">
+                    <FontAwesomeIcon icon={faUtensils} /> Personal Chef
+                  </span>
+                )}
+                {selectedApartment.onsite_daycare && (
+                  <span className="modal-icon-text">
+                    <FontAwesomeIcon icon={faBaby} /> Onsite Daycare
+                  </span>
+                )}
+              </div>
               {showMore ? (
                 <span>
-                  erisque enim ligula venenatis dolor. Maecenas nisl est,
-                  ultrices nec congue eget, auctor vitae massa. Fusce luctus
-                  vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                  ullamcorper ipsum dignissim ac. In at libero sed nunc
-                  venenatis imperdiet sed ornare turpis. Donec vitae dui eget
-                  tellus gravida venenatis. Integer fringilla congue eros non
-                  fermentum. Sed dapibus pulvinar nibh tempor porta. erisque
-                  enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
-                  congue eget, auctor vitae massa. Fusce luctus vestibulum augue
-                  ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum
-                  dignissim ac. In at libero sed nunc venenatis imperdiet sed
-                  ornare turpis
+                  <h3 className="category" style={{ marginTop: "2vh" }}>
+                    Internet
+                  </h3>
+                  <ul>
+                    {selectedApartment.keyless_entry && <li>Keyless Entry</li>}
+                    {selectedApartment.smart_thermostat && (
+                      <li>Smart Thermostat</li>
+                    )}
+                    {selectedApartment.smart_security_system && (
+                      <li>Smart Security System</li>
+                    )}
+                  </ul>
+                  <h3 className="category">Home</h3>
+                  <ul>
+                    {selectedApartment.maid_service && <li>Maid Service</li>}
+                    {selectedApartment.spa && <li>Spa</li>}
+                  </ul>
+                  <h3 className="category">Kitchen</h3>
+                  <ul>
+                    {selectedApartment.full_kitchen && <li>Full Kitchen</li>}
+                    {selectedApartment.pizza_ovens && <li>Pizza Oven</li>}
+                    {selectedApartment.hibachi_grill && <li>Hibachi Grill</li>}
+                  </ul>
+                  <h3 className="category">Outdoors</h3>
+                  <ul>
+                    {selectedApartment.rooftop_pool && <li>Rooftop Pool</li>}
+                    {selectedApartment.ocean_view && <li>Ocean View</li>}
+                    {selectedApartment.golf_course && <li>Golf Course</li>}
+                    {selectedApartment.community_garden && (
+                      <li>Community Garden</li>
+                    )}
+                  </ul>
+                  <h3 className="category">Pets</h3>
+                  <ul>
+                    <li>{selectedApartment.pets}</li>
+                  </ul>
                 </span>
               ) : (
-                <span id="dots">...</span>
+                <span id="dots"></span>
               )}
             </div>
             <p onClick={toggleShowMore} className="subtle-btn">
               {showMore ? (
-                <>
+                <p style={{ marginTop: "2vh" }}>
                   <FontAwesomeIcon icon={faChevronLeft} /> Read less
-                </>
+                </p>
               ) : (
-                <>
+                <p style={{ marginTop: "2vh" }}>
                   Read more <FontAwesomeIcon icon={faChevronRight} />
-                </>
+                </p>
               )}
             </p>
           </div>

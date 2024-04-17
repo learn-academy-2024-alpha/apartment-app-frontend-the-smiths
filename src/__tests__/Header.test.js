@@ -24,9 +24,12 @@ test("renders the Header component", () => {
   expect(apartmentsLink).toBeInTheDocument()
   expect(apartmentsLink).toHaveAttribute("href", "/apartments")
 
-  const contactLink = screen.getByText("Contact")
+  const contactLink = screen.getByText("Explore the Maldives")
   expect(contactLink).toBeInTheDocument()
-  expect(contactLink).toHaveAttribute("href", "/contact")
+  expect(contactLink).toHaveAttribute(
+    "href",
+    "https://maldives-magazine.com/top-10/10-experiences-every-traveler-maldives.htm"
+  )
 
   const getStartedButton = screen.getByText("Get Started")
   expect(getStartedButton).toBeInTheDocument()

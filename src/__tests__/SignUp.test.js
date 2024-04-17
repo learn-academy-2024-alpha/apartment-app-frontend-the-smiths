@@ -2,21 +2,30 @@ import React from "react"
 import { render, screen } from "@testing-library/react"
 import { BrowserRouter } from "react-router-dom"
 import Home from "../pages/Home.js"
+import SignUp from "../components/SignUp.js"
 
 test("renders SignIn component", () => {
   render(
     <BrowserRouter>
-      <Home />
+      <SignUp />
     </BrowserRouter>
   )
 
-  const signInTitle = screen.getByText("Luxury in the Maldives")
-  expect(signInTitle).toBeInTheDocument()
+  const signUpTitle = screen.getByText(/Sign Up/)
+  expect(signUpTitle).toBeInTheDocument()
 
-  const maidService = screen.getByText(/Maid Services/)
-  expect(maidService).toBeInTheDocument()
-  const personalChefs = screen.getByText(/Personal Chefs/)
-  expect(personalChefs).toBeInTheDocument()
-  const wifi = screen.getByText(/Fiber Optic Wifi/)
-  expect(wifi).toBeInTheDocument()
+  const username = screen.getByLabelText(/Email/)
+  expect(username).toBeInTheDocument()
+
+  const password = screen.getByLabelText("Password")
+  expect(password).toBeInTheDocument()
+
+  const passwordConfirmation = screen.getByLabelText("Password Confirmation")
+  expect(passwordConfirmation).toBeInTheDocument()
+
+  const submitBtn = screen.getByText(/Submit/)
+  expect(submitBtn).toBeInTheDocument()
+
+  const signInBtn = screen.getByText(/Sign In/)
+  expect(signInBtn).toBeInTheDocument()
 })

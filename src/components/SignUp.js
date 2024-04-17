@@ -32,7 +32,9 @@ const SignUp = ({ signUp, handleShowSignIn }) => {
             {...register("email", { required: true })}
           />
           {errors.email && (
-            <span className="form-validations">Email is required</span>
+            <span className="form-validations error-form-text">
+              Email is required
+            </span>
           )}
         </FormGroup>
         <FormGroup>
@@ -45,7 +47,9 @@ const SignUp = ({ signUp, handleShowSignIn }) => {
             {...register("password", { required: true })}
           />
           {errors.password && (
-            <span className="form-validations">Password is required</span>
+            <span className="form-validations error-form-text">
+              Password is required
+            </span>
           )}
         </FormGroup>
         <FormGroup>
@@ -58,12 +62,14 @@ const SignUp = ({ signUp, handleShowSignIn }) => {
             {...register("password_confirmation", { required: true })}
           />
           {errors.password && (
-            <span className="form-validations">Password is required</span>
+            <span className="form-validations error-form-text">
+              Password Confirmation is required
+            </span>
           )}
         </FormGroup>
         <div className="justify-center">
           <button className="form-submit-btn" onClick={handleSubmit}>
-            Sign Up
+            Submit
           </button>
         </div>
       </Form>
