@@ -1,5 +1,5 @@
 import React from "react"
-import ApartmentNew from "../components/ApartmentNew.js"
+import ApartmentNew from "../pages/ApartmentNew.js"
 import { useRef } from "react"
 
 const ModalNewForm = ({ handleClick, handleShowNewFormModal }) => {

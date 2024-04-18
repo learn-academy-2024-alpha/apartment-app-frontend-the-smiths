@@ -1,24 +1,29 @@
 import React, { useState } from "react"
 import Modal from "../components/Modal"
 import logo from "../assets/logo.png"
+import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBed } from "@fortawesome/free-solid-svg-icons"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
-import ApartmentNew from "../components/ApartmentNew.js"
-import ModalNewForm from "../components/ModalNewForm.js"
-import ApartmentEdit from "../components/ApartmentEdit.js"
+import ApartmentNew from "./ApartmentNew.js"
+// import ModalNewForm from "../components/ModalNewForm.js"
+import ApartmentEdit from "./ApartmentEdit.js"
 
 const MyApartments = ({
   apartments,
   user,
-  handleCreateListing,
-  showNewForm,
   createApartment,
+  updateApartment,
+  deleteApartment,
 }) => {
   const [selectedApartment, setSelectedApartment] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
+  const [editClicked, setEditClicked] = useState(false)
+  const [newClicked, setNewClicked] = useState(false)
+  const [aptId, setAptId] = useState(null)
+  const navigate = useNavigate()
 
   const handleClick = (apartment) => {
     setSelectedApartment(apartment)
@@ -30,23 +35,42 @@ const MyApartments = ({
       document.body.classList.remove("modal-open")
     }
   }
-  const handleShowNewFormModal = () => {
-    handleCreateListing()
-    if (!showNewForm) {
-      document.body.classList.add("modal-open")
-    } else {
-      document.body.classList.remove("modal-open")
-    }
-  }
+
   const myApartments = apartments.filter((apt) => apt.user_id === user.id)
-  console.log(showNewForm)
+
+  const handleEditClick = (aptId) => {
+    setEditClicked(true)
+    setNewClicked(false)
+    setAptId(aptId)
+  }
+
+  const handleNewClick = () => {
+    setEditClicked(false)
+    setNewClicked(true)
+  }
+
+  const handleDeleteApartment = (id) => {
+    deleteApartment(id)
+    navigate("/my-apartments")
+  }
+
   return (
     <>
-      <ApartmentEdit />
-      <ApartmentNew createApartment={createApartment} />
-      {showNewForm && (
-        <ModalNewForm handleShowNewFormModal={handleShowNewFormModal} />
+      {editClicked && (
+        <ApartmentEdit
+          apartments={apartments}
+          user={user}
+          updateApartment={updateApartment}
+          editClicked={editClicked}
+          aptId={aptId}
+        />
       )}
+      {newClicked && (
+        <ApartmentNew createApartment={createApartment} user={user} />
+      )}
+      {/* {showNewForm && (
+        <ModalNewForm handleShowNewFormModal={handleShowNewFormModal} />
+      )} */}
       <div className="index-cont">
         <div className="index-top-text justify-center align-center">
           <img
@@ -58,10 +82,7 @@ const MyApartments = ({
             My Apartments
           </h2>
         </div>
-        <button
-          className="other-form-option-btn"
-          onClick={() => handleShowNewFormModal}
-        >
+        <button className="other-form-option-btn" onClick={handleNewClick}>
           Create Your Listing
         </button>
         <div className="cards-cont">
@@ -72,11 +93,13 @@ const MyApartments = ({
                   className="edit-icon opacity-transition opacity-hover"
                   icon={faPenToSquare}
                   data-testid="edit-icon"
+                  onClick={() => handleEditClick(apartment.id)}
                 />
                 <FontAwesomeIcon
                   className="trash-icon opacity-transition opacity-hover"
                   icon={faTrash}
                   data-testid="delete-icon"
+                  onClick={() => handleDeleteApartment(apartment.id)}
                 />
                 <img
                   className="card-image"

@@ -16,7 +16,6 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [userSignedIn, setUserSignedIn] = useState(false)
   const [checkLoggedInStatus, setCheckLoggedInStatus] = useState(null)
-  const [showNewForm, setShowNewForm] = useState(false)
   const location = useLocation()
   const isIndexPage = location.pathname === "/apartments"
   const isMyApartmentsPage = location.pathname === "/my-apartments"
@@ -114,13 +113,19 @@ const App = () => {
     setShowSignUpForm(false)
   }
 
-  const handleCreateListing = () => {
-    console.log(showNewForm)
-    setShowNewForm(true)
-  }
   const createApartment = async (apartment) => {
     console.log(apartment)
   }
+
+  const updateApartment = async (apartment, id) => {
+    console.log(apartment)
+    console.log(id)
+  }
+
+  const deleteApartment = async (id) => {
+    console.log(id)
+  }
+
   return (
     <div
       className={isIndexPage || isMyApartmentsPage ? "muted-bg" : "tropical-bg"}
@@ -153,11 +158,11 @@ const App = () => {
             path="/my-apartments"
             element={
               <MyApartments
-                handleCreateListing={handleCreateListing}
-                showNewForm={showNewForm}
                 apartments={apartments}
                 user={user}
                 createApartment={createApartment}
+                updateApartment={updateApartment}
+                deleteApartment={deleteApartment}
               />
             }
           />
