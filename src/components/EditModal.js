@@ -34,6 +34,7 @@ const EditModal = ({
             updateApartment={updateApartment}
             editClicked={editClicked}
             aptId={aptId}
+            handleEditClick={handleEditClick}
           />
         </div>
       </div>

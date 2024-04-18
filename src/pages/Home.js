@@ -1,3 +1,4 @@
+import React, { useState } from "react"
 import SignUp from "../components/SignUp.js"
 import SignIn from "../components/SignIn.js"
 import { NavLink } from "react-router-dom"
@@ -11,8 +12,35 @@ const Home = ({
   signIn,
   userSignedIn,
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const audioSrc = "/gentlewaves.mp3"
+
+  const togglePlayPause = () => {
+    const audio = document.getElementById("audio-player")
+    if (isPlaying) {
+      audio.pause()
+    } else {
+      audio.play()
+    }
+    setIsPlaying(!isPlaying)
+  }
+
   return (
     <div className="home-cont">
+      <div className="audio-player-container">
+        <audio
+          id="audio-player"
+          src={audioSrc}
+          loop
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        >
+          Your browser does not support the audio element.
+        </audio>
+        <button onClick={togglePlayPause} className="audio-btn">
+          {isPlaying ? "Pause" : "Play"}
+        </button>
+      </div>
       <div className="hero-text justify-center">
         <h2 className="hero-h2 fancy-font">Live the Vibe, Love Your Life</h2>
         <h3 className="hero-h3">

@@ -10,7 +10,7 @@ import Index from "./pages/Index.js"
 import MyApartments from "./pages/MyApartments.js"
 
 const App = () => {
-  const [apartments, setApartments] = useState(mockApartments)
+  const [apartments, setApartments] = useState([])
   const [showSignInForm, setShowSignInForm] = useState(false)
   const [showSignUpForm, setShowSignUpForm] = useState(false)
   const [user, setUser] = useState(null)
@@ -28,6 +28,28 @@ const App = () => {
     setCheckLoggedInStatus(JSON.parse(userValue))
     setUser(JSON.parse(userValue))
   }, [])
+
+  useEffect(() => {
+    getApartments()
+  }, [])
+
+  const getApartments = async () => {
+    try {
+      const getResponse = await fetch("http://localhost:3000/apartments")
+      if (!getResponse.ok) {
+        throw new Error("Error on the get request for Apartments")
+      }
+      const getResult = await getResponse.json()
+      getResult.sort(
+        (a, b) =>
+          new Date(b.updated_at || b.created_at) -
+          new Date(a.updated_at || a.created_at)
+      )
+      setApartments(getResult)
+    } catch (error) {
+      alert("Something went wrong: " + error.message)
+    }
+  }
 
   const signIn = async (user) => {
     try {
@@ -114,16 +136,61 @@ const App = () => {
   }
 
   const createApartment = async (apartment) => {
-    console.log(apartment)
+    try {
+      const postResponse = await fetch("http://localhost:3000/apartments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apartment),
+      })
+      if (!postResponse.ok) {
+        throw new Error("Error on the post request for apartments")
+      }
+      await postResponse.json()
+      getApartments()
+    } catch (error) {
+      console.log("Oops! something went wrong:", error.message)
+    }
   }
 
   const updateApartment = async (apartment, id) => {
-    console.log(apartment)
-    console.log(id)
+    try {
+      const patchResponse = await fetch(
+        `http://localhost:3000/apartments/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(apartment),
+        }
+      )
+      if (!patchResponse.ok) {
+        throw new Error("Error on the post request for apartmentss")
+      }
+      await patchResponse.json()
+      getApartments()
+    } catch (error) {
+      console.log("Oops! something went wrong:", error.message)
+    }
   }
 
   const deleteApartment = async (id) => {
-    console.log(id)
+    try {
+      const deleteResponse = await fetch(
+        `http://localhost:3000/apartments/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
+      if (!deleteResponse.ok) {
+        throw new Error("Error on the post request for apartments")
+      }
+      getApartments()
+    } catch (error) {
+      console.log("Oops! something went wrong:", error.message)
+    }
   }
 
   return (

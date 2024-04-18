@@ -3,22 +3,22 @@ import { Form, FormGroup, Label } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 
-const ApartmentNew = ({ createApartment, user }) => {
+const ApartmentNew = ({ createApartment, user, handleNewClick }) => {
   const navigate = useNavigate()
 
   const preloadedValues = {
-    name: "Name",
+    name: "Shell",
     street: "Test Street",
     unit: "Test Unit",
-    city: "Test City",
-    state: "Test State",
+    city: "Addu",
+    state: "Maldives",
     square_footage: 1000,
-    price: "$1000",
-    bedrooms: 1,
+    price: "1,000",
+    bedrooms: 4,
     bathrooms: 1.0,
     pets: "Test Pets",
     image:
-      "https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg",
+      "https://images.unsplash.com/photo-1578439297699-eb414262c2de?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHxiZWFjaCUyMGhvdXNlfGVufDB8fDB8fHww",
     smart_security_system: false.toString(),
     rooftop_pool: true.toString(),
     golf_course: true.toString(),
@@ -44,6 +44,7 @@ const ApartmentNew = ({ createApartment, user }) => {
   } = useForm({ defaultValues: preloadedValues })
 
   const onSubmit = (newApartment) => {
+    handleNewClick(null)
     newApartment.user_id = user.id
     createApartment(newApartment)
     navigate("/my-apartments")
@@ -207,6 +208,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="smart_security_system">Smart Security System</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="smart_security_system"
               value={true}
@@ -217,6 +219,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="smart_security_system"
               value={false}
@@ -230,6 +233,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="rooftop_pool">Rooftop Pool</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="rooftop_pool"
               value="true"
@@ -240,6 +244,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="rooftop_pool"
               value="false"
@@ -253,6 +258,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="golf_course">Golf Course</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="golf_course"
               value="true"
@@ -263,6 +269,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="golf_course"
               value="false"
@@ -276,6 +283,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="community_garden">Community Garden</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="community_garden"
               value="true"
@@ -286,6 +294,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="community_garden"
               value="false"
@@ -299,6 +308,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="spa">Spa</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="spa"
               value="true"
@@ -309,6 +319,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="spa"
               value="false"
@@ -322,6 +333,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="concierge">Concierge</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="concierge"
               value="true"
@@ -332,6 +344,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="concierge"
               value="false"
@@ -345,6 +358,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="onsite_daycare">Onsite Daycare</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="onsite_daycare"
               value="true"
@@ -355,6 +369,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="onsite_daycare"
               value="false"
@@ -368,6 +383,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="pizza_ovens">Pizza Ovens</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="pizza_ovens"
               value="true"
@@ -378,6 +394,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="pizza_ovens"
               value="false"
@@ -391,6 +408,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="hibachi_grill">Hibachi Grill</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="hibachi_grill"
               value="true"
@@ -401,6 +419,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="hibachi_grill"
               value="false"
@@ -414,6 +433,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           <Label for="full_kitchen">Full Kitchen</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="full_kitchen"
               value="true"
@@ -424,6 +444,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="full_kitchen"
               value="false"
