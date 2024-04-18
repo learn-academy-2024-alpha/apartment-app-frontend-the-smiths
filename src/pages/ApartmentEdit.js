@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
   const navigate = useNavigate()
+  console.log(apartments)
   const apartment = apartments?.find((item) => item.id === aptId)
 
   const preloadedValues = {
