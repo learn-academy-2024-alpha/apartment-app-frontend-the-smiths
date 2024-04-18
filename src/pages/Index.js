@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Modal from "../components/Modal"
+import IndexModal from "../components/IndexModal"
 import logo from "../assets/logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBed } from "@fortawesome/free-solid-svg-icons"
@@ -9,7 +9,7 @@ const Index = ({ apartments }) => {
   const [selectedApartment, setSelectedApartment] = useState(null)
   const [modalOpen, setModalOpen] = useState(false)
 
-  const handleClick = (apartment) => {
+  const handleSeeMore = (apartment) => {
     setSelectedApartment(apartment)
     setModalOpen(!modalOpen)
 
@@ -19,7 +19,6 @@ const Index = ({ apartments }) => {
       document.body.classList.remove("modal-open")
     }
   }
-  console.log(apartments)
 
   return (
     <div className="index-cont">
@@ -83,14 +82,14 @@ const Index = ({ apartments }) => {
               <FontAwesomeIcon icon={faBed} /> {apartment.bedrooms}
               {apartment.bedrooms === 1 ? " bedroom" : " bedrooms"}
             </p>
-            <p className="subtle-btn" onClick={() => handleClick(apartment)}>
+            <p className="subtle-btn" onClick={() => handleSeeMore(apartment)}>
               {"See More "}
               <FontAwesomeIcon icon={faChevronRight} />
             </p>
             {modalOpen && (
-              <Modal
+              <IndexModal
                 selectedApartment={selectedApartment}
-                handleClick={handleClick}
+                handleSeeMore={handleSeeMore}
               />
             )}
           </div>

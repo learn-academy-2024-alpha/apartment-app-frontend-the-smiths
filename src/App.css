@@ -57,6 +57,14 @@
   opacity: 50%;
 }
 
+.darker-transition {
+  transition: filter 0.3s ease;
+}
+
+.darker:hover {
+  filter: brightness(90%);
+}
+
 .slider-btn {
   border-radius: 1vh;
   background-color: var(--clr-dull-orange);
@@ -219,7 +227,6 @@
   width: 28vw;
   height: 28vh;
   overflow-y: hidden;
-  position: relative;
 }
 
 .index-h2 {
@@ -319,7 +326,7 @@
   font-size: 2vh;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  display: inline;
+  display: inline !important;
   &:hover {
     opacity: 50%;
   }
@@ -389,4 +396,31 @@
   left: 3.5vw;
   cursor: pointer;
   height: 2.75vh;
+}
+
+/* modal edit */
+
+.modal-edit-cont {
+  position: absolute;
+  background-color: var(--clr-white);
+  height: 60vh;
+  max-width: 80vw;
+  font-size: var(--font-modal);
+  border-top: var(--clr-white) 9vh solid;
+  z-index: 3;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.edit-modal-close-btn {
+  position: absolute;
+  top: -7vh;
+  left: 1vw;
+  height: 2.25vh;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 50%;
+  }
 }

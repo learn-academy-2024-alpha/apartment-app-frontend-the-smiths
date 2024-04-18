@@ -12,7 +12,7 @@ import { faBellConcierge } from "@fortawesome/free-solid-svg-icons"
 import { faUtensils } from "@fortawesome/free-solid-svg-icons"
 import { faBaby } from "@fortawesome/free-solid-svg-icons"
 
-const Modal = ({ selectedApartment, handleClick }) => {
+const IndexModal = ({ selectedApartment, handleSeeMore }) => {
   const [showMore, setShowMore] = useState(false)
 
   const toggleShowMore = () => {
@@ -22,7 +22,7 @@ const Modal = ({ selectedApartment, handleClick }) => {
 
   const handleOverlayClick = (event) => {
     if (!modalRef.current.contains(event.target)) {
-      handleClick()
+      handleSeeMore()
     }
   }
 
@@ -59,7 +59,7 @@ const Modal = ({ selectedApartment, handleClick }) => {
                 {selectedApartment.square_footage} sq/ft
               </span>
             </div>
-            <div style={{ marginTop: "6vh" }}>
+            <div style={{ marginTop: "4vh", marginBottom: "2vh" }}>
               <div className="category">Popular Amenities</div>
               <div className="modal-text-row d-flex">
                 {selectedApartment.fiber_optic && (
@@ -130,20 +130,20 @@ const Modal = ({ selectedApartment, handleClick }) => {
             </div>
             <p onClick={toggleShowMore} className="subtle-btn">
               {showMore ? (
-                <p style={{ marginTop: "2vh" }}>
+                <span style={{ marginTop: "2vh" }}>
                   <FontAwesomeIcon icon={faChevronLeft} /> Read less
-                </p>
+                </span>
               ) : (
-                <p style={{ marginTop: "2vh" }}>
+                <span>
                   Read more <FontAwesomeIcon icon={faChevronRight} />
-                </p>
+                </span>
               )}
             </p>
           </div>
         </div>
         <FontAwesomeIcon
           className="modal-close-btn"
-          onClick={() => handleClick()}
+          onClick={() => handleSeeMore()}
           icon={faTimesCircle}
         />
         <div className="modal-img-cont d-flex">
@@ -154,4 +154,4 @@ const Modal = ({ selectedApartment, handleClick }) => {
   )
 }
 
-export default Modal
+export default IndexModal

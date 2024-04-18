@@ -9,7 +9,7 @@ let mockApartments = [
     square_footage: "1600",
     price: "1,225",
     bedrooms: 1,
-    bathrooms: 1.0,
+    bathrooms: 2,
     pets: "no pets allowed",
     image:
       "https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhY2glMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D",

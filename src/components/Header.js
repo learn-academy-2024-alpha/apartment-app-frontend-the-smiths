@@ -20,7 +20,7 @@ const Header = ({ handleShowSignIn, logOut, userSignedIn }) => {
           to="/apartments"
           className="opacity-transition opacity-hover no-text-dec"
         >
-          Apartments
+          Available Apartments
         </NavLink>
         {userSignedIn && (
           <NavLink

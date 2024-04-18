@@ -20,7 +20,7 @@ test("renders the Header component", () => {
   const headerText = screen.getByText("Vibe Villas")
   expect(headerText).toBeInTheDocument()
 
-  const apartmentsLink = screen.getByText("Apartments")
+  const apartmentsLink = screen.getByText("Available Apartments")
   expect(apartmentsLink).toBeInTheDocument()
   expect(apartmentsLink).toHaveAttribute("href", "/apartments")
 

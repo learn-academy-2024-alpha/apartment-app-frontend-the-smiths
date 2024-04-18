@@ -102,7 +102,7 @@ const App = () => {
     setShowSignUpForm(false)
   }
 
-  const handleCreateAccount = () => {
+  const handleShowSignUp = () => {
     setShowSignInForm(false)
     setShowSignUpForm(true)
   }
@@ -111,6 +111,19 @@ const App = () => {
     signOut()
     setShowSignInForm(false)
     setShowSignUpForm(false)
+  }
+
+  const createApartment = async (apartment) => {
+    console.log(apartment)
+  }
+
+  const updateApartment = async (apartment, id) => {
+    console.log(apartment)
+    console.log(id)
+  }
+
+  const deleteApartment = async (id) => {
+    console.log(id)
   }
 
   return (
@@ -131,7 +144,7 @@ const App = () => {
               signUp={signUp}
               showSignInForm={showSignInForm}
               showSignUpForm={showSignUpForm}
-              handleCreateAccount={handleCreateAccount}
+              handleShowSignUp={handleShowSignUp}
               handleShowSignIn={handleShowSignIn}
               userSignedIn={userSignedIn}
               checkLoggedInStatus={checkLoggedInStatus}
@@ -143,7 +156,15 @@ const App = () => {
         {userSignedIn && (
           <Route
             path="/my-apartments"
-            element={<MyApartments apartments={apartments} user={user} />}
+            element={
+              <MyApartments
+                apartments={apartments}
+                user={user}
+                createApartment={createApartment}
+                updateApartment={updateApartment}
+                deleteApartment={deleteApartment}
+              />
+            }
           />
         )}
       </Routes>

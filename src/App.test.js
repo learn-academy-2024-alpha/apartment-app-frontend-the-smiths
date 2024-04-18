@@ -13,7 +13,7 @@ test("renders App component", () => {
     "two Vs overlapping in an elegant font"
   )
   const headerText = screen.getByText("Vibe Villas")
-  const apartmentsLink = screen.getByText("Apartments")
+  const apartmentsLink = screen.getByText("Available Apartments")
   const exploreLink = screen.getByText("Explore the Maldives")
   const getStartedButton = screen.getByText(/Get Started/i)
   expect(headerLogo).toBeInTheDocument()
