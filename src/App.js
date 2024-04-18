@@ -102,7 +102,7 @@ const App = () => {
     setShowSignUpForm(false)
   }
 
-  const handleCreateAccount = () => {
+  const handleShowSignUp = () => {
     setShowSignInForm(false)
     setShowSignUpForm(true)
   }
@@ -144,7 +144,7 @@ const App = () => {
               signUp={signUp}
               showSignInForm={showSignInForm}
               showSignUpForm={showSignUpForm}
-              handleCreateAccount={handleCreateAccount}
+              handleShowSignUp={handleShowSignUp}
               handleShowSignIn={handleShowSignIn}
               userSignedIn={userSignedIn}
               checkLoggedInStatus={checkLoggedInStatus}

@@ -1,26 +1,34 @@
-import React from "react"
-import ApartmentNew from "../pages/ApartmentNew.js"
-import { useRef } from "react"
+import React, { useState, useRef } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBed } from "@fortawesome/free-solid-svg-icons"
+import { faUserGroup } from "@fortawesome/free-solid-svg-icons"
+import { faShower } from "@fortawesome/free-solid-svg-icons"
+import { faRulerCombined } from "@fortawesome/free-solid-svg-icons"
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons"
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
+import { faWifi } from "@fortawesome/free-solid-svg-icons"
+import { faBellConcierge } from "@fortawesome/free-solid-svg-icons"
+import { faUtensils } from "@fortawesome/free-solid-svg-icons"
+import { faBaby } from "@fortawesome/free-solid-svg-icons"
 
-const ModalNewForm = ({ handleClick, handleShowNewFormModal }) => {
-  // const [showMore, setShowMore] = useState(false)
+const IndexModal = ({ selectedApartment, handleSeeMore }) => {
+  const [showMore, setShowMore] = useState(false)
 
-  // const toggleShowMore = () => {
-  //   setShowMore((prevShowMore) => !prevShowMore)
-  // }
+  const toggleShowMore = () => {
+    setShowMore((prevShowMore) => !prevShowMore)
+  }
   const modalRef = useRef(null)
 
   const handleOverlayClick = (event) => {
     if (!modalRef.current.contains(event.target)) {
-      handleShowNewFormModal()
+      handleSeeMore()
     }
   }
 
   return (
-    <>
-      <p> Hello World</p>
-      <div className="modal-overlay" onMouseDown={handleOverlayClick()}>
-        {/* <div ref={modalRef} className="modal-cont d-flex">
+    <div className="modal-overlay" onMouseDown={handleOverlayClick}>
+      <div ref={modalRef} className="modal-cont d-flex">
         <div className="modal-text-cont">
           <h2
             style={{ fontSize: "6vh", fontWeight: "600" }}
@@ -51,7 +59,7 @@ const ModalNewForm = ({ handleClick, handleShowNewFormModal }) => {
                 {selectedApartment.square_footage} sq/ft
               </span>
             </div>
-            <div style={{ marginTop: "6vh" }}>
+            <div style={{ marginTop: "4vh", marginBottom: "2vh" }}>
               <div className="category">Popular Amenities</div>
               <div className="modal-text-row d-flex">
                 {selectedApartment.fiber_optic && (
@@ -122,29 +130,28 @@ const ModalNewForm = ({ handleClick, handleShowNewFormModal }) => {
             </div>
             <p onClick={toggleShowMore} className="subtle-btn">
               {showMore ? (
-                <p style={{ marginTop: "2vh" }}>
+                <span style={{ marginTop: "2vh" }}>
                   <FontAwesomeIcon icon={faChevronLeft} /> Read less
-                </p>
+                </span>
               ) : (
-                <p style={{ marginTop: "2vh" }}>
+                <span>
                   Read more <FontAwesomeIcon icon={faChevronRight} />
-                </p>
+                </span>
               )}
             </p>
           </div>
         </div>
         <FontAwesomeIcon
           className="modal-close-btn"
-          onClick={() => handleClick()}
+          onClick={() => handleSeeMore()}
           icon={faTimesCircle}
         />
         <div className="modal-img-cont d-flex">
           <img className="modal-img" src={selectedApartment.image} alt="unit" />
         </div>
-      </div> */}
       </div>
-    </>
+    </div>
   )
 }
 
-export default ModalNewForm
+export default IndexModal

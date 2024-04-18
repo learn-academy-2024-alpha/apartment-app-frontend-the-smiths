@@ -59,7 +59,7 @@ const Modal = ({ selectedApartment, handleClick }) => {
                 {selectedApartment.square_footage} sq/ft
               </span>
             </div>
-            <div style={{ marginTop: "6vh" }}>
+            <div style={{ marginTop: "6vh", marginBottom: "2vh" }}>
               <div className="category">Popular Amenities</div>
               <div className="modal-text-row d-flex">
                 {selectedApartment.fiber_optic && (
@@ -130,13 +130,13 @@ const Modal = ({ selectedApartment, handleClick }) => {
             </div>
             <p onClick={toggleShowMore} className="subtle-btn">
               {showMore ? (
-                <p style={{ marginTop: "2vh" }}>
+                <span>
                   <FontAwesomeIcon icon={faChevronLeft} /> Read less
-                </p>
+                </span>
               ) : (
-                <p style={{ marginTop: "2vh" }}>
+                <span>
                   Read more <FontAwesomeIcon icon={faChevronRight} />
-                </p>
+                </span>
               )}
             </p>
           </div>

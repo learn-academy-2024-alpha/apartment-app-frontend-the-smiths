@@ -2,7 +2,7 @@ import React from "react"
 import { Form, FormGroup, Label } from "reactstrap"
 import { useForm } from "react-hook-form"
 
-const SignIn = ({ signIn, handleCreateAccount }) => {
+const SignIn = ({ signIn, handleShowSignUp }) => {
   const {
     register,
     handleSubmit,
@@ -60,7 +60,7 @@ const SignIn = ({ signIn, handleCreateAccount }) => {
       </Form>
       <hr />
       <div className="justify-center">
-        <button className="other-form-option-btn" onClick={handleCreateAccount}>
+        <button className="other-form-option-btn" onClick={handleShowSignUp}>
           Create an Account
         </button>
       </div>

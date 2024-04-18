@@ -1,4 +1,3 @@
-import React, { useState } from "react"
 import SignUp from "../components/SignUp.js"
 import SignIn from "../components/SignIn.js"
 import { NavLink } from "react-router-dom"
@@ -6,7 +5,7 @@ import { NavLink } from "react-router-dom"
 const Home = ({
   showSignInForm,
   showSignUpForm,
-  handleCreateAccount,
+  handleShowSignUp,
   handleShowSignIn,
   signUp,
   signIn,
@@ -87,8 +86,8 @@ const Home = ({
               </NavLink>
             </div>
           )}
-          {showSignInForm && !userSignedIn && !userSignedIn && (
-            <SignIn signIn={signIn} handleCreateAccount={handleCreateAccount} />
+          {showSignInForm && !userSignedIn && (
+            <SignIn signIn={signIn} handleShowSignUp={handleShowSignUp} />
           )}
           {showSignUpForm && !userSignedIn && (
             <SignUp signUp={signUp} handleShowSignIn={handleShowSignIn} />

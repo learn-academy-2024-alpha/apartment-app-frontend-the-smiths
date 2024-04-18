@@ -23,4 +23,5 @@ Apartment App serves as a platform for listing apartments available for rent. He
 - **Landing Page Image**: [Unsplash](https://unsplash.com)
 - **Logo**: [Canva](https://www.canva.com/)
 - **Icons**: [Font Awesome](https://fontawesome.com/)
+- **Accessibility Icons**: [Material UI](https://mui.com/material-ui/react-tooltip/)
 - **Fonts**: [Montserrat](https://fonts.google.com/specimen/Montserrat) & [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda?query=Bodoni+Moda&noto.query=Bodoni+Moda)

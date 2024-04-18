@@ -51,7 +51,7 @@ const ApartmentNew = ({ createApartment, user }) => {
 
   return (
     <>
-      <h3>Add a New Listing</h3>
+      <h3>Create a Listing</h3>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <Label for="name">Name</Label>
@@ -148,7 +148,7 @@ const ApartmentNew = ({ createApartment, user }) => {
           )}
         </FormGroup>
         <FormGroup>
-          <Label for="bedrooms">Bedrooms (number)</Label>
+          <Label for="bedrooms">Number of Bedrooms</Label>
           <input
             id="bedrooms"
             name="bedrooms"
@@ -434,7 +434,13 @@ const ApartmentNew = ({ createApartment, user }) => {
           </div>
         </FormGroup>
         <div>
-          <button type="submit">Submit</button>
+          <button
+            className="form-submit-btn darker darker-transition"
+            type="submit"
+            style={{ width: "9vw" }}
+          >
+            Create Listing
+          </button>
         </div>
       </Form>
     </>

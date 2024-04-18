@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom"
 
 const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
   const navigate = useNavigate()
-  const apartment = apartments.find((item) => item.id === aptId)
+  const apartment = apartments?.find((item) => item.id === aptId)
 
   const preloadedValues = {
+    name: apartment?.name,
     street: apartment?.street,
     unit: apartment?.unit,
     city: apartment?.city,
@@ -18,7 +19,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
     bathrooms: apartment?.bathrooms,
     pets: apartment?.pets,
     image: apartment?.image,
-    user_id: user.id,
+    user_id: user?.id,
     smart_security_system: apartment?.smart_security_system.toString(),
     rooftop_pool: apartment?.rooftop_pool.toString(),
     golf_course: apartment?.golf_course.toString(),
@@ -49,7 +50,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
   }
   return (
     <>
-      <h3>Edit {apartment.name}</h3>
+      <h3>Edit {apartment?.name}</h3>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <Label for="name">Name</Label>
@@ -146,7 +147,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           )}
         </FormGroup>
         <FormGroup>
-          <Label for="bedrooms">Bedrooms (number)</Label>
+          <Label for="bedrooms">Number of Bedrooms</Label>
           <input
             id="bedrooms"
             name="bedrooms"
@@ -161,7 +162,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           )}
         </FormGroup>
         <FormGroup>
-          <Label for="bathrooms">Bathrooms (number)</Label>
+          <Label for="bathrooms">Bathrooms</Label>
           <input
             id="bathrooms"
             name="bathrooms"
@@ -432,8 +433,12 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
         </FormGroup>
         <div>
-          <button onClick={handleSubmit} type="submit">
-            Submit
+          <button
+            className="other-form-option-btn darker darker-transition"
+            type="submit"
+            style={{ width: "11vw" }}
+          >
+            Submit Changes
           </button>
         </div>
       </Form>
