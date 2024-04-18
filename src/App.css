@@ -424,3 +424,21 @@
     opacity: 50%;
   }
 }
+
+.audio-player-container {
+  position: absolute;
+  left: 0.5vw;
+  bottom: 7vh;
+}
+
+.audio-btn {
+  border: none;
+  border-radius: 1vh;
+  height: 3vh;
+  width: 4vw;
+  background-color: #f6aa94;
+}
+
+.pointer {
+  cursor: pointer;
+}

@@ -150,7 +150,7 @@ const App = () => {
       await postResponse.json()
       getApartments()
     } catch (error) {
-      alert("Oops! something went wrong:", error.message)
+      console.log("Oops! something went wrong:", error.message)
     }
   }
 
@@ -172,7 +172,7 @@ const App = () => {
       await patchResponse.json()
       getApartments()
     } catch (error) {
-      alert("Oops! something went wrong:", error.message)
+      console.log("Oops! something went wrong:", error.message)
     }
   }
 
@@ -189,7 +189,7 @@ const App = () => {
       }
       getApartments()
     } catch (error) {
-      alert("Oops! something went wrong:", error.message)
+      console.log("Oops! something went wrong:", error.message)
     }
   }
 

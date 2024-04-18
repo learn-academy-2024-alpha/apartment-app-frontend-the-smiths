@@ -3,7 +3,13 @@ import { Form, FormGroup, Label } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 
-const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
+const ApartmentEdit = ({
+  apartments,
+  user,
+  updateApartment,
+  aptId,
+  handleEditClick,
+}) => {
   const navigate = useNavigate()
   console.log(apartments)
   const apartment = apartments?.find((item) => item.id === aptId)
@@ -46,6 +52,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
   } = useForm({ defaultValues: preloadedValues })
 
   const onSubmit = (editedApartment) => {
+    handleEditClick(null)
     updateApartment(editedApartment, apartment.id)
     navigate("/my-apartments")
   }
@@ -207,6 +214,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="smart_security_system">Smart Security System</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="smart_security_system"
               value={true}
@@ -217,6 +225,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="smart_security_system"
               value={false}
@@ -230,6 +239,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="rooftop_pool">Rooftop Pool</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="rooftop_pool"
               value="true"
@@ -240,6 +250,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="rooftop_pool"
               value="false"
@@ -253,6 +264,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="golf_course">Golf Course</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="golf_course"
               value="true"
@@ -263,6 +275,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="golf_course"
               value="false"
@@ -276,6 +289,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="community_garden">Community Garden</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="community_garden"
               value="true"
@@ -286,6 +300,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="community_garden"
               value="false"
@@ -299,6 +314,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="spa">Spa</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="spa"
               value="true"
@@ -309,6 +325,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="spa"
               value="false"
@@ -322,6 +339,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="concierge">Concierge</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="concierge"
               value="true"
@@ -332,6 +350,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="concierge"
               value="false"
@@ -345,6 +364,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="onsite_daycare">Onsite Daycare</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="onsite_daycare"
               value="true"
@@ -355,6 +375,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="onsite_daycare"
               value="false"
@@ -368,6 +389,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="pizza_ovens">Pizza Ovens</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="pizza_ovens"
               value="true"
@@ -378,6 +400,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="pizza_ovens"
               value="false"
@@ -391,6 +414,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="hibachi_grill">Hibachi Grill</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="hibachi_grill"
               value="true"
@@ -401,6 +425,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="hibachi_grill"
               value="false"
@@ -414,6 +439,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           <Label for="full_kitchen">Full Kitchen</Label>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="full_kitchen"
               value="true"
@@ -424,6 +450,7 @@ const ApartmentEdit = ({ apartments, user, updateApartment, aptId }) => {
           </div>
           <div>
             <input
+              className="pointer"
               type="radio"
               name="full_kitchen"
               value="false"

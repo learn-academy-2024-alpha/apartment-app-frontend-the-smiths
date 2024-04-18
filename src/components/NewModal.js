@@ -35,7 +35,11 @@ const NewModal = ({ createApartment, user, handleNewClick }) => {
           icon={faTimesCircle}
         />
         <div className="modal-text-cont" style={{ overflowY: "auto" }}>
-          <ApartmentNew createApartment={createApartment} user={user} />
+          <ApartmentNew
+            handleNewClick={handleNewClick}
+            createApartment={createApartment}
+            user={user}
+          />
         </div>
       </div>
     </div>
